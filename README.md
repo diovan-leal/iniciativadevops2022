@@ -292,12 +292,19 @@ Subindo a imagem :latest.
 ```
 docker push dleal/my-ubuntu-curl:latest
 ```
+## Removendo nossa imagem recem criada
 
+```
+docker image rm -f 3c003731cf87
+```
+*Foi usado o parâmetro -f (force) porque a imagem tava sendo referẽnciado em mais de um repositório o da v1 e da latest
 
-#Criando uma imagem
-#parâmetros de execução do container
+## Utilizando nossa imagem
 
-
+```
+docker run -d -i dleal/my-ubuntu-curl:v1
+```
 
 #Kubernetes
+
 #Terraform
