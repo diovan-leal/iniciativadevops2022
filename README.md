@@ -280,6 +280,15 @@ The push refers to repository [docker.io/dleal/my-ubuntu-curl]
 629d9dbab5ed: Mounted from dleal/ubuntu-curl 
 ```
 
+Após subir a v1 da nossa imagem é uma boa prática gerarmos a `latest` para execute os seguintes comandos.
+
+```
+docker tag dleal/my-ubuntu-curl:v1 dleal/my-ubuntu-curl:latest
+```
+Se consultar as imagensm agora haverá a :v1 e a :latest
+
+Subindo a imagem :lates
+
 #Criando uma imagem
 #parâmetros de execução do container
 
