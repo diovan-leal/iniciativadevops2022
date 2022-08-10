@@ -241,7 +241,7 @@ e1efc3ee468e
 ## Criando nossas próprias imagens
 Vamos criar uma imagem a partir do ubuntu com o curl já instalado para isso criaremos uma arquivo chamado Dockerfile, este arquivo contêm as instruções para a criação de uma imagem.
 
->####Dockerfile
+>#### Dockerfile
 >Um Dockerfile é um documento de texto que contém todos os comandos que um usuário pode chamar na linha de comando para montar uma imagem
 
 Conteúdo do Dockerfile
@@ -253,10 +253,32 @@ RUN apt update && \
 ```
 A instrução `FROM` indica a imagem de origem, neste caso o ubuntu e `RUN` os comandos que serão executados atualização do ubuntu `apt update` e instalação do curl `apt install curl`.
 
-Com nosso Dockerfile já podemos criar nossa imagem, mas primeiramente e não obrigatoriamente crie uma conta no [Docker hub](https://hub.docker.com/)
-para podermos subir nossa imagem e utiliza-la em qualquer lugar.
+Com o arquivo Dockerfile criado já podemos criar nossa imagem, mas primeiramente e não obrigatoriamente crie uma conta no [Docker hub](https://hub.docker.com/) para podermos subir nossa imagem e utiliza-la em qualquer lugar.
 
-Com a conta já criada
+Com a conta já criada faça o login com o comando:
+```
+docker login
+```
+Com o login do docker no terminal realizado, no diretório onde se encontra o Dockerfile informe os comandos conforme exemplo, não esqueça o contexto o ponto (.):
+Exemplo : `docker build -t <seu-namespace>/<nome-da-imagem>:<tag> .`
+```
+docker build -t dleal/my-ubuntu-curl:v1 .
+```
+
+Após a conclusão consulta sua imagem localmente pelo comando `docker image ls`.
+
+## Publicando nossa imaagem
+
+```
+docker push dleal/my-ubuntu-curl:v1
+```
+Progresso do envio da imagem
+```
+docker push dleal/my-ubuntu-curl:v1
+The push refers to repository [docker.io/dleal/my-ubuntu-curl]
+5e1665c860f4: Pushing [==========================>                        ]  22.59MB/42.62MB
+629d9dbab5ed: Mounted from dleal/ubuntu-curl 
+```
 
 #Criando uma imagem
 #parâmetros de execução do container
