@@ -140,7 +140,7 @@ Agora vamos manter o `container` em execução utilizando uma combinação de pa
 docker run -i -d ubuntu
 ```
 
-Se executar o comando `docker container ls` verá nosso container em execução.
+Se executar o comando `docker container ls` vera nosso container em execução.
 
 ## Acessando um container em execução.
 
@@ -148,10 +148,118 @@ Utilize o container_id ou o container_name
 ```
 docker container exec -it bd3e21f27979 /bin/bash
 ```
-#Parando um container
-#Deletando um container
-#Deletando uma imagem
+
+## Parando um container em execução
+
+```
+docker container stop afec6e8f006f
+```
+## Deletando um container
+
+```
+docker container rm 74dee8cb3579
+```
+
+## Deletando uma imagem
+
+```
+docker image rm df5de72bdb3b
+
+--------Result---------------------------------------------------------------------------
+docker image rm df5de72bdb3b
+Untagged: ubuntu:latest
+Untagged: ubuntu@sha256:34fea4f31bf187bc915536831fd0afc9d214755bf700b5cdb1336c82516d154e
+Deleted: sha256:df5de72bdb3b711aba4eca685b1f42c722cc8a1837ed3fbd548a9282af2d836d
+```
+
+> Ao remover uma imagem é possível que o docker informe que não conseguiu deletar devido haver containers associados a imagem.
+> ``` 
+> docker image rm df5de72bdb3b
+> Error response from daemon: conflict: unable to delete df5de72bdb3b (cannot be forced) - image is being used by running container afec6e8f006f
+> ```
+> Antes da remoção da imagem remova primeiramente os container associados.
+> Identifique o id da sua imagem e então filtre os containers gerados apartir desta imagem. Veja exemplo abaixo.
+
+## Filtrando containers oriundos de uma imagem
+
+```
+docker container ls -a --filter ancestor=df5de72bdb3b
+CONTAINER ID   IMAGE     COMMAND                CREATED          STATUS                        PORTS     NAMES
+afec6e8f006f   ubuntu    "bash"                 22 minutes ago   Exited (137) 14 minutes ago             compassionate_ellis
+26da763f504e   ubuntu    "-i -d"                22 minutes ago   Created                                 festive_allen
+2bdf097e2567   ubuntu    "-i -t /bin/bash"      22 minutes ago   Created                                 laughing_ramanujan
+39b398c43080   ubuntu    "-i -t /bin/bash"      23 minutes ago   Created                                 quizzical_dijkstra
+bd3e21f27979   ubuntu    "bash"                 23 hours ago     Exited (137) 20 hours ago               hungry_kapitsa
+7a1b916b3dee   ubuntu    "/bin/bash /bin/cat"   23 hours ago     Created                                 relaxed_mendeleev
+77b061fd4644   ubuntu    "/bin/bash cat"        23 hours ago     Created                                 lucid_rubin
+36b7cf860d27   ubuntu    "/bin/bash"            23 hours ago     Exited (0) 23 hours ago                 determined_goldstine
+de021e9f5af9   ubuntu    "bash"                 23 hours ago     Exited (0) 23 hours ago                 blissful_mayer
+72569606bdc5   ubuntu    "/bin/bash"            23 hours ago     Exited (0) 23 hours ago                 nice_bose
+97a9ff625e95   ubuntu    "/bin/bash"            4 days ago       Exited (0) 4 days ago                   amazing_bhabha
+e1efc3ee468e   ubuntu    "/bin/bash"            5 days ago       Exited (127) 5 days ago                 condescending_ptolemy
+3fdc2da7741f   ubuntu    "/bin/bash"            5 days ago       Exited (0) 5 days ago                   thirsty_jepsen
+
+```
+
+## Retornando apenas o `container id` 
+
+```
+docker container ls -a -q --filter ancestor=df5de72bdb3b
+afec6e8f006f
+26da763f504e
+2bdf097e2567
+39b398c43080
+bd3e21f27979
+7a1b916b3dee
+77b061fd4644
+36b7cf860d27
+de021e9f5af9
+72569606bdc5
+97a9ff625e95
+e1efc3ee468e
+3fdc2da7741f
+```
+
+## Removendo todos os containers associados a uma imagem
+
+```
+docker container rm $(docker container ls -a -q --filter ancestor=df5de72bdb3b)
+afec6e8f006f
+26da763f504e
+2bdf097e2567
+39b398c43080
+bd3e21f27979
+7a1b916b3dee
+77b061fd4644
+36b7cf860d27
+de021e9f5af9
+72569606bdc5
+97a9ff625e95
+e1efc3ee468e
+3fdc2da7741f
+```
+## Criando nossas próprias imagens
+Vamos criar uma imagem a partir do ubuntu com o curl já instalado para isso criaremos uma arquivo chamado Dockerfile, este arquivo contêm as instruções para a criação de uma imagem.
+
+>####Dockerfile
+>Um Dockerfile é um documento de texto que contém todos os comandos que um usuário pode chamar na linha de comando para montar uma imagem
+
+Conteúdo do Dockerfile
+
+```
+FROM ubuntu
+RUN apt update && \
+    apt install curl --yes
+```
+A instrução `FROM` indica a imagem de origem, neste caso o ubuntu e `RUN` os comandos que serão executados atualização do ubuntu `apt update` e instalação do curl `apt install curl`.
+
+Com nosso Dockerfile já podemos criar nossa imagem, mas primeiramente e não obrigatoriamente crie uma conta no [Docker hub](https://hub.docker.com/)
+para podermos subir nossa imagem e utiliza-la em qualquer lugar.
+
+Com a conta já criada
+
 #Criando uma imagem
+#parâmetros de execução do container
 
 
 
