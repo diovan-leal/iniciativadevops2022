@@ -285,9 +285,14 @@ Após subir a v1 da nossa imagem é uma boa prática gerarmos a `latest` para ex
 ```
 docker tag dleal/my-ubuntu-curl:v1 dleal/my-ubuntu-curl:latest
 ```
-Se consultar as imagensm agora haverá a :v1 e a :latest
+Se consultar as imagens agora haverá a :v1 e a :latest
 
-Subindo a imagem :lates
+Subindo a imagem :latest.
+
+```
+docker push dleal/my-ubuntu-curl:latest
+```
+
 
 #Criando uma imagem
 #parâmetros de execução do container
