@@ -241,6 +241,10 @@ e1efc3ee468e
 
 ```
 docker container rm $(docker container ls -a -q --filter ancestor=df5de72bdb3b)
+```
+
+```
+docker container rm $(docker container ls -a -q --filter ancestor=df5de72bdb3b)
 afec6e8f006f
 26da763f504e
 2bdf097e2567
