@@ -102,7 +102,7 @@ fade541f5daa   hello-world       "/hello"      friendly_grothendieck     13 minu
 
 Observe que o nome do container é um nome randômico, criado pelo próprio docker, veja coluna NAMES friendly_grothendieck.
 
-#### Vamos gerar um container com um nome personalizado.
+#### Vamos gerar um container com um nome personalizado
 
 ```
 docker run --name  my-hello-world hello-world
