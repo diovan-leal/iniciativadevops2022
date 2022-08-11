@@ -313,4 +313,9 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 
 # KUBERNETES
 
+Em desenvolvimento
+
 # TERRAFORM
+Em desenvolvimento
+
+
