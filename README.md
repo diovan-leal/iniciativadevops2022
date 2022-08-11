@@ -2,7 +2,7 @@
 Este documento é apenas um <b>key notes</b> particular  referente aos assuntos de `docker`, `kubernetes` e `terraform` abordados na semana da iniciativadeveops2022. Ofertado por [Fabricio Veronez](https://www.youtube.com/user/fabricioveronez).
 <hr>
 
-## CONTÉUDO
+## CONTEÚDO
 ### -[DOCKER](#docker)
 ### -[KUBERNETES](#kubernetes)
 ### -[TERRAFORM](#terraform)
@@ -325,6 +325,9 @@ docker image rm -f 3c003731cf87
 ```
 docker run -d -i dleal/my-ubuntu-curl:v1
 ```
+<hr>
+>Ainda há muito mais sobre docker(mapeamentos de volumes, portas, variáveis de ambiente etc... ), containers e também docker-compose.
+>Prentede-se evoluir este documento e abordar estes assuntos.
 
 ## KUBERNETES
 
