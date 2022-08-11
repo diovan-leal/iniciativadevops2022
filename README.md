@@ -141,7 +141,7 @@ No exemplo, acessamos o container e criamos o arquivo my-file.txt
 
 Neste momento nosso container ainda esta em execução, mas quando sairmos do moto interativo nosso container morrerá e junto com ele nosso arquivo recém criado.
 
->A propósito, containers são efêmeros. O seja transitórios, temporários dados criados em tempo de execução são perdidos, como o arquivo do nosso exemplo. >Dados que precisam ser duráveis ex: banco de dados precisam ser mapeados para fora do container.
+>A propósito, containers são efêmeros. Ou seja transitórios, temporários dados criados em tempo de execução são perdidos, como o arquivo do nosso exemplo. >Dados que precisam ser duráveis ex: banco de dados precisam ser mapeados para fora do container.
 
 Agora vamos manter o `container` em execução utilizando uma combinação de parâmetros -i -d
 
