@@ -77,7 +77,7 @@ Status: Downloaded newer image for hello-world:latest
 
 Neste momento já baixamos uma `imagem` e executamos um `container`.
 
-##Listando as imagens disponíveis localmente.
+## Listando as imagens disponíveis localmente.
 ```
 docker image ls
 ```
@@ -88,7 +88,7 @@ REPOSITORY                                   TAG                  IMAGE ID      
 hello-world                                  latest               feb5d9fea6a5   10 months ago   13.3kB
 ```
 
-##Listando os containers executados e em execução
+## Listando os containers executados e em execução
 
 ```
 docker container ls -a
