@@ -119,7 +119,7 @@ fade541f5daa   hello-world       "/hello"      friendly_grothendieck     13 minu
 
 No exemplo acima, nosso container executou e morreu.
 
-Agora vamos executar um container de forma interativa, para isso usaremos o parâmetro -it, ou seja acessaramos nosso container para executar comandos.
+Agora vamos executar um container de forma interativa, para isso usaremos o parâmetro -it, ou seja acessaremos nosso container para executar comandos.
 
 ```
 docker container run -it ubuntu /bin/bash
@@ -137,7 +137,7 @@ estamos no container
 root@72569606bdc5:/# 
 ```
 
-No exemlo, acessamos o container e criamos o arquivo my-file.txt 
+No exemplo, acessamos o container e criamos o arquivo my-file.txt 
 
 Neste momento nosso container ainda esta em execução, mas quando sairmos do moto interativo nosso container morrerá e junto com ele nosso arquivo recém criado.
 
