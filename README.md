@@ -23,7 +23,7 @@ docker helper
 ```
 ## Hello World do Docker
 
-Num primeiro contato com o docker é bastante comum "consumirmos" uma imagem padrão e bastante utilizada do docker que é a imagem hello-world.
+Em um primeiro contato com o docker é bastante comum "consumirmos" afim de testes uma imagem padrão e bastante utilizada, a imagem hello-world.
 ```
 docker container run hello-world
 ```
