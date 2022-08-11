@@ -330,8 +330,9 @@ docker image rm -f 3c003731cf87
 docker run -d -i dleal/my-ubuntu-curl:v1
 ```
 <hr>
->Ainda há muito mais sobre docker(mapeamentos de volumes, portas, variáveis de ambiente etc... ), containers e também docker-compose.
->Prentede-se evoluir este documento e abordar estes assuntos.
+
+> Ainda há muito mais sobre docker(mapeamentos de volumes, portas, variáveis de ambiente etc...), containers e também docker-compose.
+> Prentede-se evoluir este documento e abordar estes assuntos.
 
 ## KUBERNETES
 
