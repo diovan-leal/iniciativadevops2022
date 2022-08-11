@@ -100,7 +100,7 @@ CONTAINER ID   IMAGE             COMMAND       NAMES                     CREATED
 fade541f5daa   hello-world       "/hello"      friendly_grothendieck     13 minutes ago    Exited (0) 13 minutes ago             
 ```
 
-Observe que o nome do container ficou um nome randômico, criado pelo próprio docker, veja coluna NAMES friendly_grothendieck.
+Observe que o nome do container é um nome randômico, criado pelo próprio docker, veja coluna NAMES friendly_grothendieck.
 
 Vamos gerar um container com um nome personalizado.
 
