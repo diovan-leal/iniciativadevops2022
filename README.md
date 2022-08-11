@@ -66,7 +66,7 @@ Primeiramente o `docker client` procura localmente a imagem solicitada, de acord
 ```
 Unable to find image 'hello-world:latest' locally
 ```
-Não encontrando ele baixa a imagem do [Docker hub](https://hub.docker.com/)
+Não encontrando, ele baixa a imagem do [Docker hub](https://hub.docker.com/)
 
 ```
 latest: Pulling from library/hello-world
