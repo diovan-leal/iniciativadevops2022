@@ -3,9 +3,9 @@ Este documento é apenas um <b>key notes</b> particular  referente aos assuntos 
 <hr>
 
 ## CONTÉUDO
-### [DOCKER](#docker)
-### [KUBERNETES](#kubernetes)
-### [TERRAFORM](#terraform)
+### -[DOCKER](#docker)
+### -[KUBERNETES](#kubernetes)
+### -[TERRAFORM](#terraform)
 
 <hr>
 
@@ -316,6 +316,7 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 Em desenvolvimento
 
 ## TERRAFORM
+
 Em desenvolvimento
 
 
