@@ -193,6 +193,10 @@ Deleted: sha256:df5de72bdb3b711aba4eca685b1f42c722cc8a1837ed3fbd548a9282af2d836d
 
 ```
 docker container ls -a --filter ancestor=df5de72bdb3b
+```
+
+```
+docker container ls -a --filter ancestor=df5de72bdb3b
 CONTAINER ID   IMAGE     COMMAND                CREATED          STATUS                        PORTS     NAMES
 afec6e8f006f   ubuntu    "bash"                 22 minutes ago   Exited (137) 14 minutes ago             compassionate_ellis
 26da763f504e   ubuntu    "-i -d"                22 minutes ago   Created                                 festive_allen
