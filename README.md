@@ -8,7 +8,7 @@ Este documento é apenas um <b>key notes</b> particular  referente aos assuntos 
 ### TERRAFORM
 <hr>
 
-#DOCKER
+# DOCKER
 Após a instalação do docker em seu sistema operacional.
 
 Rode o seguinte comando para verificar a versão instalada.
