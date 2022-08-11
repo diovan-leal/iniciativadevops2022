@@ -10,6 +10,9 @@ Este documento é apenas um <b>key notes</b> particular  referente aos assuntos 
 <hr>
 
 # DOCKER
+
+## Instalação
+Para procedimento de instalação segue link [instalação do docker](https://docs.docker.com/get-docker/)
 Após a instalação do docker em seu sistema operacional.
 
 Rode o seguinte comando para verificar a versão instalada.
