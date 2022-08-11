@@ -1,5 +1,5 @@
 # INICIATIVA-DEVOPS
-Este documento é apenas um <b>key notes</b> particular  referente aos assuntos de `docker`, `kubernetes` e `terraform` abordados na semana da iniciativadeveops2022. Ofertado por Fabricio Veronez.
+Este documento é apenas um <b>key notes</b> particular  referente aos assuntos de `docker`, `kubernetes` e `terraform` abordados na semana da iniciativadeveops2022. Ofertado por [Fabricio Veronez](https://www.youtube.com/user/fabricioveronez).
 <hr>
 
 Instalação de ferramentas não será abordado.
