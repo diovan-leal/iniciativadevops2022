@@ -260,7 +260,7 @@ e1efc3ee468e
 3fdc2da7741f
 ```
 ## Criando nossas próprias imagens
-Vamos criar uma imagem a partir do ubuntu com o curl já instalado para isso criaremos uma arquivo chamado Dockerfile, este arquivo contêm as instruções para a criação de uma imagem.
+Vamos criar uma imagem a partir do ubuntu com o curl já instalado, para isso criaremos uma arquivo chamado `Dockerfile`, este arquivo contêm as instruções para a criação de uma imagem.
 
 >#### Dockerfile
 >Um Dockerfile é um documento de texto que contém todos os comandos que um usuário pode chamar na linha de comando para montar uma imagem
@@ -274,19 +274,19 @@ RUN apt update && \
 ```
 A instrução `FROM` indica a imagem de origem, neste caso o ubuntu e `RUN` os comandos que serão executados atualização do ubuntu `apt update` e instalação do curl `apt install curl`.
 
-Com o arquivo Dockerfile criado já podemos criar nossa imagem, mas primeiramente e não obrigatoriamente crie uma conta no [Docker hub](https://hub.docker.com/) para podermos subir nossa imagem e utiliza-la em qualquer lugar.
+Com o arquivo Dockerfile criado já podemos criar nossa imagem, mas primeiramente e não obrigatoriamente crie uma conta no [Docker hub](https://hub.docker.com/) para podermos subir nossa imagem e utilizá-la em qualquer lugar.
 
 Com a conta já criada faça o login com o comando:
 ```
 docker login
 ```
-Com o login do docker no terminal realizado, no diretório onde se encontra o Dockerfile informe os comandos conforme exemplo, não esqueça o contexto o ponto (.):
+Com o login do docker no terminal realizado, no diretório onde se encontra o `Dockerfile` informe os comandos conforme exemplo, não esqueça o contexto o ponto (.):
 Exemplo : `docker build -t <seu-namespace>/<nome-da-imagem>:<tag> .`
 ```
 docker build -t dleal/my-ubuntu-curl:v1 .
 ```
 
-Após a conclusão consulta sua imagem localmente pelo comando `docker image ls`.
+Após a conclusão consulte sua imagem localmente pelo comando `docker image ls`.
 
 ## Publicando nossa imaagem
 
@@ -301,7 +301,7 @@ The push refers to repository [docker.io/dleal/my-ubuntu-curl]
 629d9dbab5ed: Mounted from dleal/ubuntu-curl 
 ```
 
-Após subir a v1 da nossa imagem é uma boa prática gerarmos a `latest` para execute os seguintes comandos.
+Após subir a v1 da nossa imagem é uma boa prática gerarmos a `latest` para isto execute os seguintes comandos.
 
 ```
 docker tag dleal/my-ubuntu-curl:v1 dleal/my-ubuntu-curl:latest
@@ -328,10 +328,10 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 
 ## KUBERNETES
 
-Em desenvolvimento
+Em desenvolvimento ...
 
 ## TERRAFORM
 
-Em desenvolvimento
+Em desenvolvimento ...
 
 
