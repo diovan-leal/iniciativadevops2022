@@ -3,13 +3,12 @@ Este documento é apenas um <b>key notes</b> particular  referente aos assuntos 
 <hr>
 
 ## CONTÉUDO
-### DOCKER
+### [DOCKER] (#DOCKER)
 ### KUBERNETES
 ### TERRAFORM
+<hr>
 
-Instalação de ferramentas não será abordado.
-
-#Docker
+# DOCKER
 Após a instalação do docker em seu sistema operacional.
 
 Rode o seguinte comando para verificar a versão instalada.
