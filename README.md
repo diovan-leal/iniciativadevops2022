@@ -116,9 +116,10 @@ CONTAINER ID   IMAGE             COMMAND       NAMES                     CREATED
 fade541f5daa   hello-world       "/hello"      friendly_grothendieck     13 minutes ago    Exited (0) 13 minutes ago  
 ```
 
+
 No exemplo acima, nosso container executou e morreu.
 
-Agora vamos executar um container de forma interativa usaremos o parâmetrp -it, ou seja acessaramos nosso container para executar comandos.
+Agora vamos executar um container de forma interativa, para isso usaremos o parâmetro -it, ou seja acessaramos nosso container para executar comandos.
 
 ```
 docker container run -it ubuntu /bin/bash
