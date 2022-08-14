@@ -336,6 +336,32 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 
 ## KUBERNETES
 
+De forma bastante resumida o kubernetes é uma plataforma open source, para gerenciamento e orquestração de containers.
+
+Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker não resolve estes problemas,a função do docker é isolar os processos a nível de ambiente.
+
+### Arquitetura do kubernetes
+### Kubernetes control plane
+#### Kube-controller manager
+#### Cloud-controller manager
+#### Kube-api server
+#### Kube scheduler
+
+### Kubernetes nodes
+#### Kubelet
+#### Kube-proxy
+#### Pod
+É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
+[Neste artigo da Red hat](https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes-pod) o conceito de pod é bem explicado.
+
+#### ReplicaSet
+#### Deployment
+
+
+
+
+
+
 Em desenvolvimento ...
 
 ## TERRAFORM
