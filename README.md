@@ -354,6 +354,9 @@ Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenci
 É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
 [Neste artigo da Red hat](https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes-pod) o conceito de pod é bem explicado.
 
+Fonts:
+https://kubebyexample.com/
+
 #### ReplicaSet
 #### Deployment
 
