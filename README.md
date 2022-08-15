@@ -344,7 +344,7 @@ Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenci
 ### Kubernetes control plane
 O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod.
 #### Kube-controller manager
-O `controller manager` e um processo que agrupa variados tipos de controlle como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
+O `controller manager` e um processo que agrupa variados tipos de controllers como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
 #### Cloud-controller manager
 #### Kube-api server
 #### Kube scheduler
