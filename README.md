@@ -362,9 +362,17 @@ O Kube-api server é um componente da camada de gerenciamento do Kubernetes que 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver]
 
 #### Kube scheduler
+Realiza o gerenciamento dos pods.
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler]
 
 ### Kubernetes nodes
+Um nós é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
+
+(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
+
 #### Kubelet
+É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
+
 #### Kube-proxy
 #### Pod
 É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
