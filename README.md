@@ -341,12 +341,26 @@ De forma bastante resumida o kubernetes é uma plataforma open source, para gere
 Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker não resolve estes problemas,a função do docker é isolar os processos a nível de ambiente.
 
 ### Arquitetura do kubernetes
+
 ### Kubernetes control plane
 O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod.
+
 #### Kube-controller manager
 O `controller manager` e um processo que agrupa variados tipos de controllers como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
-#### Cloud-controller manager
+
+#### Cloud-controller manager (CCM)
+O CCM 
+
+O CCM consolida toda a lógica que depende da nuvem dos componentes do Kube-controller manager para criar um único ponto de integração com a nuvem.
+
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/architecture/cloud-controller/]
+               
 #### Kube-api server
+
+O Kube-api server é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes, sendo o front end o gerenciamento do Kubernetes.
+
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver]
+
 #### Kube scheduler
 
 ### Kubernetes nodes
