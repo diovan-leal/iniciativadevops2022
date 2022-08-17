@@ -336,13 +336,15 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 
 ## KUBERNETES
 
+### CONCEITUAL
+
 De forma bastante resumida o kubernetes é uma plataforma open source, para gerenciamento e orquestração de containers.
 
 Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker não resolve estes problemas,a função do docker é isolar os processos a nível de ambiente.
 
-### Arquitetura do kubernetes
+#### Arquitetura do kubernetes
 
-### Kubernetes control plane
+#### Kubernetes control plane
 O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod.
 
 #### Kube-controller manager
@@ -365,7 +367,7 @@ O Kube-api server é um componente da camada de gerenciamento do Kubernetes que 
 Realiza o gerenciamento dos pods.
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler]
 
-### Kubernetes nodes
+#### Kubernetes nodes
 Um nós é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
 
 (saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
@@ -373,15 +375,21 @@ Um nós é um máquina virtual ou física do cluster kubernetes. O Kuberneter ag
 #### Kubelet
 É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
 
+(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet]
+
 #### Kube-proxy
+Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seu pods.
+
+(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy]
+
 #### Pod
 É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
 [Neste artigo da Red hat](https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes-pod) o conceito de pod é bem explicado.
 
-Fonts:
-https://kubebyexample.com/
-
 #### ReplicaSet
+É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indispónivel, o replicaset observa este alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
+
+(saiba mais) [#https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/]
 #### Deployment
 #### Services
 
