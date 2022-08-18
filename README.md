@@ -370,17 +370,17 @@ Realiza o gerenciamento dos pods.
 #### Kubernetes nodes
 Um nós é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
 
-(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
 
 #### Kubelet
 É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
 
-(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet]
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet]
 
 #### Kube-proxy
 Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seu pods.
 
-(saiba mais) [#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy]
+(saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy]
 
 #### Pod
 É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
@@ -389,9 +389,20 @@ Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre 
 #### ReplicaSet
 É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indispónivel, o replicaset observa este alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
 
-(saiba mais) [#https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/]
+(saiba mais)[#https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/]
+
 #### Deployment
+Deployments declaram alterações para Pods e ReplicaSets.
+Um estado/configuração desejado é declarado e o deployment controla alterações deste estado, deployments possuem replicaset implícita.
+
+(saiba mais)[#https://kubernetes.io/docs/concepts/workloads/controllers/deployment/]
+
 #### Services
+
+É uma maneira abstrata de expor uma aplicação que esta rodando nos Pods como um serviço de rede. 
+Com o Kubernetes não há necessidade de modificar a aplicação para usar um mecanismo de service discovery. O Kubernetes fornece aos seus Pods endereços de IP próprios e um único DNS name para o conjunto de Pods podendo fazer um load-balance por este.
+
+(saiba mais)[#https://kubernetes.io/docs/concepts/services-networking/service/]
 
 
 
