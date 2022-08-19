@@ -335,69 +335,83 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 > Prentede-se evoluir este documento e abordar estes assuntos.
 
 ## KUBERNETES
-![image](https://user-images.githubusercontent.com/47063082/185514827-b7adaeb5-c3e4-4134-b9ff-ebbc4cb78ab1.png)
 
-![image](https://kubernetes.io/pt-br/)
+![image](https://user-images.githubusercontent.com/47063082/185515553-cd553ad7-2d81-4bcd-bc66-32ae7e5876da.png)
 
 
-### CONCEITUAL
+### Conceitual
 
-De forma bastante resumida o kubernetes é uma plataforma open source, para gerenciamento e orquestração de containers.
+De forma bastante resumida o kubernetes é uma plataforma open source, para <strong>gerenciamento e orquestração de containers</strong>.
 
-Aplicações containerizadas precisam ter um mecanismo que permita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker não resolve estes problemas,a função do docker é isolar os processos a nível de ambiente.
+Aplicações containerizadas precisam deu um mecanismo que possibilita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker por si so não resolve estas preocupações de disponibilidade de infra, a função do docker é isolar os processos a nível de ambiente.
 
 #### Arquitetura do kubernetes
 
+![image](https://user-images.githubusercontent.com/47063082/185516275-41ae816a-85f2-439f-baa5-7f847872cc4f.png)
+
+
 #### Kubernetes control plane
-O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod.
+
+O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod etc...
 
 #### Kube-controller manager
+
 O `controller manager` e um processo que agrupa variados tipos de controllers como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
 
-#### Cloud-controller manager (CCM)
-O CCM 
+(saiba mais)[#https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/]
 
-O CCM consolida toda a lógica que depende da nuvem dos componentes do Kube-controller manager para criar um único ponto de integração com a nuvem.
+#### Cloud-controller manager (CCM)
+
+O CCM consolida toda a lógica que depende da nuvem, dos componentes do `Kube-controller manager` para criar um único ponto de integração com a nuvem.
 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/architecture/cloud-controller/]
                
 #### Kube-api server
 
-O Kube-api server é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes, sendo o front end o gerenciamento do Kubernetes.
+O Kube-api server é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes, sendo o front end, o gerenciamento do Kubernetes.
 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver]
 
 #### Kube scheduler
+
 Realiza o gerenciamento dos pods.
+
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler]
 
 #### Kubernetes nodes
-Um nós é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
+
+Um nó é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
 
 #### Kubelet
+
 É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet]
 
 #### Kube-proxy
-Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seu pods.
+
+Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seus pods.
 
 (saiba mais)[#https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy]
 
 #### Pod
-É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recurso são unficados no pod proporcionando distribuição e escalonamento.
+
+É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recursos são unficados no pod proporcionando distribuição e escalonamento.
+
 [Neste artigo da Red hat](https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes-pod) o conceito de pod é bem explicado.
 
 #### ReplicaSet
-É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indispónivel, o replicaset observa este alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
+
+É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indisponível, o replicaset observa esta alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
 
 (saiba mais)[#https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/]
 
 #### Deployment
+
 Deployments declaram alterações para Pods e ReplicaSets.
-Um estado/configuração desejado é declarado e o deployment controla alterações deste estado, deployments possuem replicaset implícita.
+Um estado/configuração desejado é declarado e o deployment controla as alterações deste estado, deployments possuem replicaset implícita.
 
 (saiba mais)[#https://kubernetes.io/docs/concepts/workloads/controllers/deployment/]
 
@@ -409,11 +423,9 @@ Com o Kubernetes não há necessidade de modificar a aplicação para usar um me
 (saiba mais)[#https://kubernetes.io/docs/concepts/services-networking/service/]
 
 
+### LABORATÓRIO KUBERNETES
 
-
-
-
-Em desenvolvimento ...
+Em desenvolvimento.
 
 ## TERRAFORM
 
