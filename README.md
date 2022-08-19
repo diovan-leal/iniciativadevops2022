@@ -334,9 +334,103 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 > Ainda há muito mais sobre docker(mapeamentos de volumes, portas, variáveis de ambiente etc...), containers e também docker-compose.
 > Prentede-se evoluir este documento e abordar estes assuntos.
 
+<hr>
+
+
 ## KUBERNETES
 
-Em desenvolvimento ...
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/47063082/185515553-cd553ad7-2d81-4bcd-bc66-32ae7e5876da.png" alt="logo-kubernetes">
+</p>
+
+
+### Conceitual
+
+De forma bastante resumida o kubernetes é uma plataforma open source, para <strong>gerenciamento e orquestração de containers</strong>.
+
+Aplicações containerizadas precisam deu um mecanismo que possibilita o seu gerenciamento em escala, em termos  de clusters, saúde dos containers, quantidade de nós executando uma determinada aplicação e demais requisitos. O docker por si so não resolve estas preocupações de disponibilidade de infra, a função do docker é isolar os processos a nível de ambiente. Para gerenciamento e orquestração o Kubernetes é necessário.
+
+#### Arquitetura do kubernetes
+
+![image](https://user-images.githubusercontent.com/47063082/185516275-41ae816a-85f2-439f-baa5-7f847872cc4f.png)
+
+
+#### Kubernetes control plane
+
+O `control plan` é um conjunto de componentes que são os responsáveis pelo gerenciamento do cluster, executando tarefas como: scheduling, atuar sobre eventos do cluster, iniciar um pod etc...
+
+#### Kube-controller manager
+
+O `controller manager` é um processo que agrupa variados tipos de controllers como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
+
+#### Cloud-controller manager (CCM)
+
+O CCM consolida toda a lógica que depende da nuvem, dos componentes do `Kube-controller manager` para criar um único ponto de integração com a nuvem.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/architecture/cloud-controller/)
+               
+#### Kube-api server
+
+O Kube-api server é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes, sendo o front end, o gerenciamento do Kubernetes.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver)
+
+#### Kube scheduler
+
+Realiza o gerenciamento dos pods.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler)
+
+#### Kubernetes nodes
+
+Um nó é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/)
+
+#### Kubelet
+
+É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet)
+
+#### Kube-proxy
+
+Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seus pods.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy)
+
+#### Pod
+
+É a menor unidade de uma aplicação kubernetes, um pod é composto por na maioria das vezes um container e em casos mais complexos vários containers fortemente acoplados, este último em cenários mais avançados. Os recursos são unficados no pod proporcionando distribuição e escalonamento.
+
+[Neste artigo da Red hat](https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes-pod) o conceito de pod é bem explicado.
+
+#### ReplicaSet
+
+É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indisponível, o replicaset observa esta alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+
+#### Deployment
+
+Deployments declaram alterações para Pods e ReplicaSets.
+Um estado/configuração desejado é declarado e o deployment controla as alterações deste estado, deployments possuem replicaset implícita.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+
+#### Services
+
+É uma maneira abstrata de expor uma aplicação que esta rodando nos Pods como um serviço de rede. 
+Com o Kubernetes não há necessidade de modificar a aplicação para usar um mecanismo de service discovery. O Kubernetes fornece aos seus Pods endereços de IP próprios e um único DNS name para o conjunto de Pods podendo fazer um load-balance por este.
+
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/services-networking/service/)
+
+
+### LABORATÓRIO KUBERNETES
+
+Em desenvolvimento...
 
 ## TERRAFORM
 
