@@ -338,6 +338,7 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 
 <p align="center">
 ![image](https://user-images.githubusercontent.com/47063082/185515553-cd553ad7-2d81-4bcd-bc66-32ae7e5876da.png)
+ <img src="https://user-images.githubusercontent.com/47063082/185515553-cd553ad7-2d81-4bcd-bc66-32ae7e5876da.png" alt="logo-kubernetes">
 </p>
 
 
