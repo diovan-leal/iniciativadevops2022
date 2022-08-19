@@ -337,6 +337,8 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 ## KUBERNETES
 ![image](https://user-images.githubusercontent.com/47063082/185514827-b7adaeb5-c3e4-4134-b9ff-ebbc4cb78ab1.png)
 
+![image](https://kubernetes.io/pt-br/)
+
 
 ### CONCEITUAL
 
