@@ -335,6 +335,8 @@ docker run -d -i dleal/my-ubuntu-curl:v1
 > Prentede-se evoluir este documento e abordar estes assuntos.
 
 ## KUBERNETES
+![image](https://user-images.githubusercontent.com/47063082/185514827-b7adaeb5-c3e4-4134-b9ff-ebbc4cb78ab1.png)
+
 
 ### CONCEITUAL
 
