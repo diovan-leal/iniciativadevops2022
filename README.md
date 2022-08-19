@@ -363,43 +363,43 @@ O `control plan` é um conjunto de componentes que são os responsáveis pelo ge
 
 O `controller manager` é um processo que agrupa variados tipos de controllers como: Node controller, Job controller, EndPoints controller, Service account e Token controllers.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
 
 #### Cloud-controller manager (CCM)
 
 O CCM consolida toda a lógica que depende da nuvem, dos componentes do `Kube-controller manager` para criar um único ponto de integração com a nuvem.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/architecture/cloud-controller/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/architecture/cloud-controller/)
                
 #### Kube-api server
 
 O Kube-api server é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes, sendo o front end, o gerenciamento do Kubernetes.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-apiserver)
 
 #### Kube scheduler
 
 Realiza o gerenciamento dos pods.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-scheduler)
 
 #### Kubernetes nodes
 
 Um nó é um máquina virtual ou física do cluster kubernetes. O Kuberneter agrupa containers em pods e estes em nós.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/architecture/nodes/)
 
 #### Kubelet
 
 É um agente que roda em cada nó do cluster e tem a funcionalidade de gerenciar o containers dentro deste nó desde que tenham sido criados pelo kubernetes.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kubelet)
 
 #### Kube-proxy
 
 Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre seus pods.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy]
+[Para mais informações, acesse a documentação](https://kubernetes.io/pt-br/docs/concepts/overview/components/#kube-proxy)
 
 #### Pod
 
@@ -411,26 +411,26 @@ Realiza o gerenciamento de rede dentro do nó, permitindo a comunicação entre 
 
 É um recurso do kubernetes para, manter um conjunto de pods idênticos em execução, caso um pod fique indisponível, o replicaset observa esta alteração e sobe um novo pod, mantendo a quantidade de pods em execução.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
 #### Deployment
 
 Deployments declaram alterações para Pods e ReplicaSets.
 Um estado/configuração desejado é declarado e o deployment controla as alterações deste estado, deployments possuem replicaset implícita.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/docs/concepts/workloads/controllers/deployment/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 #### Services
 
 É uma maneira abstrata de expor uma aplicação que esta rodando nos Pods como um serviço de rede. 
 Com o Kubernetes não há necessidade de modificar a aplicação para usar um mecanismo de service discovery. O Kubernetes fornece aos seus Pods endereços de IP próprios e um único DNS name para o conjunto de Pods podendo fazer um load-balance por este.
 
-(Para mais informações, acesse a documentação)[https://kubernetes.io/docs/concepts/services-networking/service/]
+[Para mais informações, acesse a documentação](https://kubernetes.io/docs/concepts/services-networking/service/)
 
 
 ### LABORATÓRIO KUBERNETES
 
-Em desenvolvimento.
+Em desenvolvimento...
 
 ## TERRAFORM
 
