@@ -430,7 +430,138 @@ Com o Kubernetes não há necessidade de modificar a aplicação para usar um me
 
 ### LABORATÓRIO KUBERNETES
 
-Em desenvolvimento...
+Para desenvolvermos nosso laboratório de Kubernetes vamos utlizar duas ferramentas o kubectl e o k3d.
+
+
+#### Kubectl
+O kubectl é ferramenta de linha de comando do kubernetes, com este utilitário é que será realizado as operações no clustes como deploy, gerenciamento de recursos e análise do ambiente.
+
+[Para mais informações e detalhes de instalação, acesse a documentação](https://kubernetes.io/docs/tasks/tools/#kubectl)
+[Lista de operações realizadas pelo kubectl](https://kubernetes.io/docs/reference/kubectl/)
+
+#### K3D
+O K3D é uma solução leve que permite a criação de klusters single-node e multi-node em ambiente local.
+
+[Para mais informações segue site oficial](https://k3d.io/v5.4.4/)
+
+#### Hands-On
+##### Criando um cluster
+
+```
+k3d cluster create
+```
+
+--->resultado<---
+
+```
+INFO[0000] Prep: Network                                
+INFO[0000] Created network 'k3d-k3s-default'            
+INFO[0000] Created image volume k3d-k3s-default-images  
+INFO[0000] Starting new tools node...                   
+INFO[0000] Starting Node 'k3d-k3s-default-tools'        
+INFO[0001] Creating node 'k3d-k3s-default-server-0'     
+INFO[0001] Creating LoadBalancer 'k3d-k3s-default-serverlb' 
+INFO[0001] Using the k3d-tools node to gather environment information 
+INFO[0001] HostIP: using network gateway 172.27.0.1 address 
+INFO[0001] Starting cluster 'k3s-default'               
+INFO[0001] Starting servers...                          
+INFO[0001] Starting Node 'k3d-k3s-default-server-0'     
+INFO[0007] All agents already running.                  
+INFO[0007] Starting helpers...                          
+INFO[0007] Starting Node 'k3d-k3s-default-serverlb'     
+INFO[0014] Injecting records for hostAliases (incl. host.k3d.internal) and for 2 network members into CoreDNS configmap... 
+INFO[0016] Cluster 'k3s-default' created successfully!  
+INFO[0016] You can now use it like this:                
+kubectl cluster-info
+```
+
+##### Listando o cluster
+```
+k3d cluster list
+```
+---> resultado <---
+```
+NAME          SERVERS   AGENTS   LOADBALANCER
+k3s-default   1/1       0/0      true
+```
+
+Criamos um cluster sem atribuição específica de nome, logo o k3d aplicou um nomeação default k3s-default, nosso cluster possui apenas um nó e observe que por dafault o k3d atribui um loadbalancer para o cluster, conforme podemo obervar no resultado da listagem do cluster.
+
+##### Criando um cluster nomeado
+
+```
+k3d cluster create mycluster-lab
+```
+--> resultado <---
+```
+INFO[0000] Prep: Network                                
+INFO[0000] Created network 'k3d-mycluster-lab'          
+INFO[0000] Created image volume k3d-mycluster-lab-images 
+INFO[0000] Starting new tools node...                   
+INFO[0000] Starting Node 'k3d-mycluster-lab-tools'      
+INFO[0001] Creating node 'k3d-mycluster-lab-server-0'   
+INFO[0001] Creating LoadBalancer 'k3d-mycluster-lab-serverlb' 
+INFO[0001] Using the k3d-tools node to gather environment information 
+INFO[0001] HostIP: using network gateway 172.28.0.1 address 
+INFO[0001] Starting cluster 'mycluster-lab'             
+INFO[0001] Starting servers...                          
+INFO[0001] Starting Node 'k3d-mycluster-lab-server-0'   
+INFO[0006] All agents already running.                  
+INFO[0006] Starting helpers...                          
+INFO[0006] Starting Node 'k3d-mycluster-lab-serverlb'   
+INFO[0013] Injecting records for hostAliases (incl. host.k3d.internal) and for 2 network members into CoreDNS configmap... 
+INFO[0015] Cluster 'mycluster-lab' created successfully! 
+INFO[0015] You can now use it like this:                
+kubectl cluster-info
+
+```
+Executando o comando `k3d cluster list` obtemos nossos dois cluster recém criados.
+
+```
+NAME            SERVERS   AGENTS   LOADBALANCER
+k3s-default     1/1       0/0      true
+mycluster-lab   1/1       0/0      true
+
+```
+
+Observe nosso segundo cluster agora esta nomeado como "mycluster-lab"
+
+#### Deletando lusters do nosso ambiente.
+
+Podemos deletar apenas um cluster ou todos.
+Para deletar todos os clusters apenas adicionamos o parâmentro `-a`
+
+```
+k3d cluster delete -a
+```
+---> resultado <---
+
+```
+INFO[0000] Deleting all clusters...                     
+INFO[0000] Deleting cluster 'k3s-default'               
+INFO[0001] Deleting cluster network 'k3d-k3s-default'   
+INFO[0001] Deleting 1 attached volumes...               
+INFO[0001] Removing cluster details from default kubeconfig... 
+INFO[0001] Removing standalone kubeconfig file (if there is one)... 
+INFO[0001] Successfully deleted cluster k3s-default!    
+INFO[0001] Deleting cluster 'mycluster-lab'             
+INFO[0003] Deleting cluster network 'k3d-mycluster-lab' 
+INFO[0003] Deleting 1 attached volumes...               
+INFO[0003] Removing cluster details from default kubeconfig... 
+INFO[0003] Removing standalone kubeconfig file (if there is one)... 
+INFO[0003] Successfully deleted cluster mycluster-lab!  
+```
+
+Conferindo a deleação dos nossos clusters.
+
+```
+k3d cluster list
+```
+
+```
+NAME   SERVERS   AGENTS   LOADBALANCER
+```
+
 
 ## TERRAFORM
 
