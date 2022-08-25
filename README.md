@@ -713,7 +713,9 @@ explicando o conteúdo do arquivo:
 
 `apiVersion` = versão da api dos recursos que estamos utilizando para saber qual versão atual no seu ambiente executar o comando abaixo.
 `metadata` = vamos definir dados para o nosso pod, no caso aqui o nome.
-`spec` = 
+`spec` = definição do nosso container, no caso usando uma imagem criada na semana da iniciativadevops.
+
+[Para mais informações sobre pod acesse a documentação](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 ```
 kubectl api-resources | grep pod
