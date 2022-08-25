@@ -485,7 +485,7 @@ NAME          SERVERS   AGENTS   LOADBALANCER
 k3s-default   1/1       0/0      true
 ```
 
-Criamos um cluster sem atribuição específica de nome, logo o k3d aplicou um nomeação default k3s-default, nosso cluster possui apenas um nó e observe que por dafault o k3d atribui um loadbalancer para o cluster, conforme podemo obervar no resultado da listagem do cluster.
+Criamos um cluster sem atribuição específica de nome, logo o k3d aplicou um nomeação default k3s-default, nosso cluster possui apenas um nó e observe que por dafault o k3d atribui um loadbalancer para o cluster, conforme podemos obervar no resultado da listagem do cluster.
 
 ##### Criando um cluster nomeado
 
@@ -526,7 +526,52 @@ mycluster-lab   1/1       0/0      true
 
 Observe nosso segundo cluster agora esta nomeado como "mycluster-lab"
 
-#### Deletando lusters do nosso ambiente.
+#### Criando um cluster sem loadbalancer
+
+Para criarmos um cluster sem loadbalancer basta  informar o parâmetro `--no-lb` conforme instrução que segue.
+
+```
+k3d cluster create mycluste-no-lb --no-lb
+```
+
+-->Resultado<---
+
+```
+INFO[0000] Prep: Network                                
+INFO[0000] Created network 'k3d-mycluste-no-lb'         
+INFO[0000] Created image volume k3d-mycluste-no-lb-images 
+INFO[0000] Starting new tools node...                   
+INFO[0000] Starting Node 'k3d-mycluste-no-lb-tools'     
+INFO[0001] Creating node 'k3d-mycluste-no-lb-server-0'  
+INFO[0001] Using the k3d-tools node to gather environment information 
+INFO[0001] HostIP: using network gateway 172.29.0.1 address 
+INFO[0001] Starting cluster 'mycluste-no-lb'            
+INFO[0001] Starting servers...                          
+INFO[0001] Starting Node 'k3d-mycluste-no-lb-server-0'  
+INFO[0006] All agents already running.                  
+INFO[0006] All helpers already running.                 
+INFO[0006] Injecting records for hostAliases (incl. host.k3d.internal) and for 1 network members into CoreDNS configmap... 
+INFO[0008] Cluster 'mycluste-no-lb' created successfully! 
+INFO[0008] You can now use it like this:                
+kubectl cluster-info
+```
+
+Observe que na coluna loadbalancer esta `false`;
+
+```
+k3d cluster list
+```
+
+```
+NAME             SERVERS   AGENTS   LOADBALANCER
+k3s-default      1/1       0/0      true
+mycluste-no-lb   1/1       0/0      false
+```
+
+
+
+
+#### Deletando clusters do nosso ambiente.
 
 Podemos deletar apenas um cluster ou todos.
 Para deletar todos os clusters apenas adicionamos o parâmentro `-a`
@@ -560,6 +605,23 @@ k3d cluster list
 
 ```
 NAME   SERVERS   AGENTS   LOADBALANCER
+```
+
+Deletando um cluseter expecífico
+
+```
+k3d cluster delete mycluster-lab
+```
+---> resultado <---
+
+```
+INFO[0000] Deleting cluster 'mycluster-lab'             
+INFO[0001] Deleting cluster network 'k3d-mycluster-lab' 
+INFO[0001] Deleting 2 attached volumes...               
+WARN[0001] Failed to delete volume 'k3d-mycluster-lab-images' of cluster 'mycluster-lab': failed to find volume 'k3d-mycluster-lab-images': Error: No such volume: k3d-mycluster-lab-images -> Try to delete it manually 
+INFO[0001] Removing cluster details from default kubeconfig... 
+INFO[0001] Removing standalone kubeconfig file (if there is one)... 
+INFO[0001] Successfully deleted cluster mycluster-lab!  
 ```
 
 
