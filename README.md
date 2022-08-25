@@ -567,6 +567,81 @@ NAME             SERVERS   AGENTS   LOADBALANCER
 k3s-default      1/1       0/0      true
 mycluste-no-lb   1/1       0/0      false
 ```
+#### Criando um cluster um pouco maior
+
+Vamos criar um cluster com 3 servers e 3 agentes.
+
+```
+k3d cluster create my-cluster-lab --servers 3 --agents 3
+```
+
+```
+INFO[0000] Prep: Network                                
+INFO[0000] Created network 'k3d-my-cluster-lab'         
+INFO[0000] Created image volume k3d-my-cluster-lab-images 
+INFO[0000] Starting new tools node...                   
+INFO[0000] Creating initializing server node            
+INFO[0000] Creating node 'k3d-my-cluster-lab-server-0'  
+INFO[0000] Starting Node 'k3d-my-cluster-lab-tools'     
+INFO[0001] Creating node 'k3d-my-cluster-lab-server-1'  
+INFO[0002] Creating node 'k3d-my-cluster-lab-server-2'  
+INFO[0002] Creating node 'k3d-my-cluster-lab-agent-0'   
+INFO[0002] Creating node 'k3d-my-cluster-lab-agent-1'   
+INFO[0002] Creating node 'k3d-my-cluster-lab-agent-2'   
+INFO[0002] Creating LoadBalancer 'k3d-my-cluster-lab-serverlb' 
+INFO[0002] Using the k3d-tools node to gather environment information 
+INFO[0002] HostIP: using network gateway 172.30.0.1 address 
+INFO[0002] Starting cluster 'my-cluster-lab'            
+INFO[0002] Starting the initializing server...          
+INFO[0003] Starting Node 'k3d-my-cluster-lab-server-0'  
+INFO[0004] Starting servers...                          
+INFO[0004] Starting Node 'k3d-my-cluster-lab-server-1'  
+INFO[0027] Starting Node 'k3d-my-cluster-lab-server-2'  
+INFO[0040] Starting agents...                           
+INFO[0040] Starting Node 'k3d-my-cluster-lab-agent-2'   
+INFO[0040] Starting Node 'k3d-my-cluster-lab-agent-0'   
+INFO[0040] Starting Node 'k3d-my-cluster-lab-agent-1'   
+INFO[0049] Starting helpers...                          
+INFO[0049] Starting Node 'k3d-my-cluster-lab-serverlb'  
+INFO[0056] Injecting records for hostAliases (incl. host.k3d.internal) and for 7 network members into CoreDNS configmap... 
+INFO[0059] Cluster 'my-cluster-lab' created successfully! 
+INFO[0059] You can now use it like this:                
+kubectl cluster-info
+
+```
+
+```
+k3d cluster list
+```
+
+```
+NAME             SERVERS   AGENTS   LOADBALANCER
+my-cluster-lab   3/3       3/3      true
+
+```
+
+##### Verificando nossos nodes com kubectl
+
+```
+kubectl get nodes
+```
+
+```
+NAME                          STATUS   ROLES                       AGE   VERSION
+k3d-my-cluster-lab-agent-0    Ready    <none>                      13m   v1.23.8+k3s1
+k3d-my-cluster-lab-agent-1    Ready    <none>                      13m   v1.23.8+k3s1
+k3d-my-cluster-lab-agent-2    Ready    <none>                      13m   v1.23.8+k3s1
+k3d-my-cluster-lab-server-0   Ready    control-plane,etcd,master   14m   v1.23.8+k3s1
+k3d-my-cluster-lab-server-1   Ready    control-plane,etcd,master   14m   v1.23.8+k3s1
+k3d-my-cluster-lab-server-2   Ready    control-plane,etcd,master   13m   v1.23.8+k3s1
+```
+
+##### Criando nossos pods
+
+
+
+
+
 
 
 
@@ -597,7 +672,7 @@ INFO[0003] Removing standalone kubeconfig file (if there is one)...
 INFO[0003] Successfully deleted cluster mycluster-lab!  
 ```
 
-Conferindo a deleação dos nossos clusters.
+Conferindo a deleção dos nossos clusters.
 
 ```
 k3d cluster list
@@ -607,7 +682,7 @@ k3d cluster list
 NAME   SERVERS   AGENTS   LOADBALANCER
 ```
 
-Deletando um cluseter expecífico
+Deletando um cluster expecífico
 
 ```
 k3d cluster delete mycluster-lab
