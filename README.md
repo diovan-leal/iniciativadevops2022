@@ -636,16 +636,6 @@ k3d-my-cluster-lab-server-1   Ready    control-plane,etcd,master   14m   v1.23.8
 k3d-my-cluster-lab-server-2   Ready    control-plane,etcd,master   13m   v1.23.8+k3s1
 ```
 
-##### Criando nossos pods
-
-
-
-
-
-
-
-
-
 #### Deletando clusters do nosso ambiente.
 
 Podemos deletar apenas um cluster ou todos.
@@ -698,6 +688,46 @@ INFO[0001] Removing cluster details from default kubeconfig...
 INFO[0001] Removing standalone kubeconfig file (if there is one)... 
 INFO[0001] Successfully deleted cluster mycluster-lab!  
 ```
+##### Criando nossos pods
+
+Agora que temos nosso cluster funcionando vamos realizar deployments de aplicações  para dentro do nosso cluster. E vamos começar deployando uma aplicação via pod.
+
+Toda configuração do clustes é realizado via arquivo como este.
+
+`pod.yaml`
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-kube-news
+spec:
+  containers:
+    - name: my-kube-news
+      image: dleal/kube-news
+      ports:
+        - containerPort: 3005
+```
+
+explicando o conteúdo do arquivo:
+
+`apiVersion` = versão da api dos recursos que estamos utilizando para saber qual versão atual no seu ambiente executar o comando abaixo.
+`metadata` = vamos definir dados para o nosso pod, no caso aqui o nome.
+`spec` = 
+
+```
+kubectl api-resources | grep pod
+
+pods                              po           v1                                     true         Pod
+podtemplates                                   v1                                     true         PodTemplate
+horizontalpodautoscalers          hpa          autoscaling/v2                         true         HorizontalPodAutoscaler
+pods                                           metrics.k8s.io/v1beta1                 true         PodMetrics
+poddisruptionbudgets              pdb          policy/v1                              true         PodDisruptionBudget
+podsecuritypolicies               psp          policy/v1beta1                         false        PodSecurityPolicy
+```
+Observe que pod esta utilizando a v1.
+
+
 
 
 ## TERRAFORM
