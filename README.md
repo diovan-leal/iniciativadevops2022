@@ -711,7 +711,8 @@ spec:
 
 explicando o conteúdo do arquivo:
 
-`apiVersion` = versão da api dos recursos que estamos utilizando para saber qual versão atual no seu ambiente executar o comando abaixo.
+`apiVersion` = versão da api dos recursos que estamos utilizando para saber qual versão atual no seu ambiente executar o comando abaixo 
+`kubectl api-resources | grep pod`.
 `metadata` = vamos definir dados para o nosso pod, no caso aqui o nome.
 `spec` = definição do nosso container, no caso usando uma imagem criada na semana da iniciativadevops.
 
@@ -728,6 +729,100 @@ poddisruptionbudgets              pdb          policy/v1                        
 podsecuritypolicies               psp          policy/v1beta1                         false        PodSecurityPolicy
 ```
 Observe que pod esta utilizando a v1.
+
+#### Realizando o deploy do nosso pod
+
+```
+kubectl apply -f pod.yaml
+```
+
+resultado esperado
+
+```
+pod/my-kube-news created
+```
+
+Acompanhando a situação atual do nosso pod.
+
+```
+kubectl get pods 
+=== OU ===
+kubectl get po
+```
+Resultado
+```
+NAME           READY   STATUS              RESTARTS   AGE
+my-kube-news   0/1     ContainerCreating   0          2m34s
+```
+
+De acordo com resultado o container do nosso pod esta no status de Creating ainda esta sendo criado
+
+Para obter mais informações do nosso pod podemos executar o seguinte comando.
+
+```
+kubectl describe pods
+```
+
+Resultado
+
+```
+Name:         my-kube-news
+Namespace:    default
+Priority:     0
+Node:         k3d-my-cluster-lab-agent-0/172.27.0.5
+Start Time:   Thu, 25 Aug 2022 22:07:15 -0300
+Labels:       <none>
+Annotations:  <none>
+Status:       Pending
+IP:           
+IPs:          <none>
+Containers:
+  my-kube-news:
+    Container ID:   
+    Image:          dleal/kube-news
+    Image ID:       
+    Port:           3005/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4cgtj (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-4cgtj:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  77s   default-scheduler  Successfully assigned default/my-kube-news to k3d-my-cluster-lab-agent-0
+  Normal  Pulling    78s   kubelet            Pulling image "dleal/kube-news"
+
+```
+
+> O conteúdo acima possui muitas informações relevantes ao nosso ambiente.
+
+
+##### Deletando um pod
+```
+kubectl delete -f pod.yaml
+```
+
 
 
 
